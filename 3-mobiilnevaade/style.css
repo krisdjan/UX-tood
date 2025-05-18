@@ -1,0 +1,64 @@
+html {
+  min-width: 200px;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "head head head head" "paaritu1 paaris1 paaritu2 paaris2";
+}
+
+.tablehead {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border: 1px solid grey;
+  grid-area: head;
+  background-color: #d2c1e3;
+}
+
+.paaris1 {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border: 1px solid grey;
+  grid-area: paaris1;
+  background-color: #d0e3c1;
+}
+
+.paaris2 {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border: 1px solid grey;
+  grid-area: paaris2;
+  background-color: #d0e3c1;
+}
+
+.paaritu1 {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border: 1px solid grey;
+  grid-area: paaritu1;
+  background-color: #c1dde3;
+}
+
+.paaritu2 {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border: 1px solid grey;
+  grid-area: paaritu2;
+  background-color: #c1dde3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas: "head head head head" "paaritu1 paaritu1 paaritu2 paaritu2" "paaris1 paaris1 paaris2 paaris2";
+  }
+}
+@media (max-width: 464px) {
+  .container {
+    grid-template-areas: "head head head head" "paaritu1 paaritu1 paaritu1 paaritu1" "paaris1 paaris1 paaris1 paaris1" "paaritu2 paaritu2 paaritu2 paaritu2" "paaris2 paaris2 paaris2 paaris2";
+  }
+}/*# sourceMappingURL=style.css.map */

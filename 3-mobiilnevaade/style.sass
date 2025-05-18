@@ -1,0 +1,55 @@
+$peavarv: #d2c1e3
+$paarisarvud: #d0e3c1
+$paaritudarvud: #c1dde3
+
+html
+    min-width: 200px
+
+//style grid items
+@mixin center()
+    display: flex
+    justify-content: center
+    padding: 30px
+    border: 1px solid grey
+
+//Grid wrapper
+.container
+    display: grid
+    grid-template-areas: "head head head head" "paaritu1 paaris1 paaritu2 paaris2"
+//Full width
+.tablehead
+    @include center
+    grid-area: head
+    background-color: $peavarv
+
+.paaris1
+    @include center
+    grid-area: paaris1
+    background-color: $paarisarvud
+
+.paaris2
+    @include center
+    grid-area: paaris2
+    background-color: $paarisarvud
+
+.paaritu1
+    @include center
+    grid-area: paaritu1
+    background-color: $paaritudarvud
+
+.paaritu2
+    @include center
+    grid-area: paaritu2
+    background-color: $paaritudarvud
+
+//Handle tablet sized screens, changes the grid area placement
+@media (max-width: 768px)
+    .container
+        grid-template-areas: "head head head head" "paaritu1 paaritu1 paaritu2 paaritu2" "paaris1 paaris1 paaris2 paaris2"
+
+//Handle phone sized screens, changes the grid area placement
+@media (max-width: 464px)
+    .container
+        grid-template-areas: "head head head head" "paaritu1 paaritu1 paaritu1 paaritu1" "paaris1 paaris1 paaris1 paaris1" "paaritu2 paaritu2 paaritu2 paaritu2" "paaris2 paaris2 paaris2 paaris2"
+
+
