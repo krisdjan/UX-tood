@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Noto Sans Display";
+  font-size: 16px;
+  color: white;
+  min-width: 200px;
+}
+
+body {
+  background-color: #949494;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  grid-area: header;
+  padding: 30px;
+  background-color: #3F7CAC;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  grid-area: sidebar;
+  background-color: #95AFBA;
+  font-size: 1.5rem;
+  padding: 50px;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  grid-area: article;
+  padding: 30px;
+  font-size: 1.2rem;
+}
+.article p {
+  text-align: justify;
+  -moz-text-align-last: center;
+       text-align-last: center;
+  max-width: 65ch;
+}
+
+.gridWrapper {
+  display: grid;
+  grid-template-areas: "header header header" "article sidebar sidebar";
+}
+
+@media (max-width: 768px) {
+  .gridWrapper {
+    grid-template-areas: "header" "sidebar" "article";
+  }
+  .article p {
+    max-width: 45ch;
+    min-width: 24ch;
+  }
+}/*# sourceMappingURL=style.css.map */

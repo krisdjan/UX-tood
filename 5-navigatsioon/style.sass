@@ -1,0 +1,88 @@
+$primary-color: white
+$secondary-color: rgb(0, 98, 255)
+    
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap')
+
+@mixin shadow()
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2)
+
+@mixin border()
+    border: 1px solid rgba(0, 0, 0, 0.3)
+    border-radius: 15px
+
+
+
+html
+    font-family: Archivo
+    font-size: 16px
+
+body
+    margin: 0
+    padding: 0
+    color: white
+    background-color: $primary-color
+    min-width: 150px
+
+
+.wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    section
+        @include shadow()
+        @include border()
+        max-width: 1000px
+        min-height: 150px
+        background-color: $secondary-color
+        padding: 10px
+        margin: 15px
+
+.navigation
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 10px 20px
+  background: $secondary-color
+  color: white
+
+  .icon
+    font-size: 28px
+
+  nav
+    ul
+        display: flex
+        flex-direction: row
+    li
+        list-style: none
+        margin-right: 50px
+    a
+        color: white
+        text-decoration: none
+
+  .menu
+    display: none
+    cursor: pointer
+    visibility: hidden
+    position: fixed
+    right: 2rem
+
+@media (max-width: 768px)
+    .navigation
+        .menu
+            display: block
+            visibility: visible
+        nav
+            ul
+            display: flex
+            justify-content: center
+            align-items: center
+            visibility: hidden
+            width: 100%
+        li
+            background-color: black
+
+        nav.active
+            visibility: visible
+
+
+    
