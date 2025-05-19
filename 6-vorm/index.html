@@ -1,126 +1,36 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Toetamise vorm</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-
-    form {
-      max-width: 500px;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 4px;
-      border: 1px solid #aaa;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    textarea {
-      resize: vertical;
-      height: 100px;
-    }
-
-    .checkbox-group {
-      margin-top: 10px;
-    }
-
-    .checkbox-group input[type="checkbox"] {
-      margin-right: 6px;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #2a7ae2;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #1a5dbf;
-    }
-
-    #thank-you {
-      margin-top: 15px;
-      font-weight: bold;
-      color: green;
-      display: none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6-Vorm</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <main>
-    <section>
-      <h1>Toeta meie tegevust</h1>
-      <p>Palun täida allolev vorm, et meid toetada.</p>
-    </section>
-
-    <section>
-     <form action="javascript:submit()" onsubmit="showThankYouMessage()">
-  <fieldset>
-    <legend>Kontaktandmed</legend>
-
-    <label for="name">Nimi*</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">E-mail*</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="phone">Telefon*</label>
-    <input type="tel" id="phone" name="phone" required pattern="[\+0-9\s\-]{7,15}">
-  </fieldset>
-
-  <fieldset>
-    <legend>Eelistused</legend>
-
-    <label>
-      <input type="checkbox" name="newsletter">
-      Soovin saada uudiskirja
-    </label>
-
-    <label>
-      <input type="checkbox" name="anonymous">
-      Soovin jääda anonüümseks
-    </label>
-  </fieldset>
-
-  <button type="submit">Saada</button>
-</form>
-
-<div id="thank-you" style="display: none; margin-top: 10px; color: green;">
-  Aitäh toetamise eest!
-</div>
-
-    </section>
+    <div class="wrapper">
+      <h1>Kontakteeru</h1>
+      <form action="javascript:submit()">
+        <label for="nimi">Nimi</label>
+        <input type="text" name="nimi" required>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" required>
+        <label for="telefon">Telefoninumber</label>
+        <input type="tel" required>
+        <fieldset>
+          <legend>Kuidas teiega ühendust võtta?</legend>
+          <input type="radio" name="uhendus" id="email">
+          <label for="email">E-mail</label>
+          <input type="radio" name="uhendus" id="telefon">
+          <label for="telefon">Telefon</label>
+        </fieldset>
+        <label for="sonum">Sõnum</label>
+        <textarea name="sonum" id="sonum" rows="10"></textarea>
+        <button type="submit" id="submitButton">Toeta meid</button>
+      </form>
+        <p id="supportMessage"></p>
+    </div>
   </main>
-
-  <script>
-    function showThankYouMessage() {
-      document.getElementById("thank-you").style.display = "block";
-    }
-  </script>
-
+  <script src="submit.js"></script>
 </body>
 </html>

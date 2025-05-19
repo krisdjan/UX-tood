@@ -1,24 +1,53 @@
+html
+    padding: 0
+    margin: 0
 
 body
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 100%
+    background-color: white
+    color: black    
 
+form
+    font-size: 24px
+    display: flex
+    flex-direction: column
+    max-width: 500px
+
+button
+    min-height: 50px
+    color: white
+    background-color: blue
+    border: none
+    font-size: 18px
+
+button:hover
+    background-color: red
+    transition: 0.2s
+
+
+label, legend
+    font-weight: 600
 
 .wrapper
     display: flex
     flex-direction: column
-    justify-content: center
+    border: 2px solid white
+    padding: 20px
+    min-width: 350px
+
+input
+    margin: 10px 0px 10px 0px
+    border-radius: 4px
+    min-height: 20px
+    border: 1px solid black
+
+
+fieldset
+    margin-bottom: 10px
+    display: inherit
+    flex-direction: row
     align-items: center
-    padding: 40px
-    background-color: lightblue
-    width: 100%
-
-form
-    display: flex
-    flex-direction: column
     input[type="radio"]
-        flex-direction: row
-        
+        margin: 0px 5px 0px 5px
 
+textarea
+    min-width: 350px
