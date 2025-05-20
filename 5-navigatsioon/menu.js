@@ -1,8 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const menuIcon = document.querySelector('.menu');
-  const nav = document.querySelector('header.navigation nav');
+const menuToggleIcon = document.getElementById("menuToggle");
+const nav = document.getElementById("mobileNav");
 
-  menuIcon.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-});
+menuToggleIcon.onclick = () => {
+  if (nav.style.display == "block") {
+    nav.style.display = "none";
+  } else {
+      nav.style.display = "block";
+  }
+}
